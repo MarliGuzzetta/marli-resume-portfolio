@@ -1,96 +1,323 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Marli Guzzetta | Portfolio</title>
-  <style>
-    body {
-      font-family: 'Segoe UI', Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #f7f8fa;
-      color: #222;
-    }
-    header {
-      background: #416dea;
-      color: #fff;
-      padding: 2rem 0 1rem 0;
-      text-align: center;
-    }
-    main {
-      max-width: 700px;
-      margin: 2rem auto;
-      background: #fff;
-      border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.07);
-      padding: 2rem;
-    }
-    h1, h2 {
-      margin-top: 0;
-    }
-    ul {
-      padding-left: 1.2em;
-    }
-    .projects {
-      margin: 2rem 0;
-    }
-    .project {
-      margin-bottom: 1.5rem;
-    }
-    .contact {
-      margin-top: 2rem;
-      padding-top: 1rem;
-      border-top: 1px solid #eee;
-    }
-    a {
-      color: #416dea;
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-    @media (max-width: 600px) {
-      main {
-        padding: 1rem;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marli Guzzetta - Portfolio & Work Samples</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #1d1d1f;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem;
+            background: white;
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        .header {
+            text-align: center;
+            padding-bottom: 3rem;
+            border-bottom: 2px solid #f5f5f7;
+            margin-bottom: 3rem;
+        }
+
+        .name {
+            font-size: 3rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+        }
+
+        .subtitle {
+            font-size: 1.5rem;
+            color: #86868b;
+            margin-bottom: 1rem;
+        }
+
+        .intro {
+            font-size: 1.1rem;
+            color: #515154;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .work-item {
+            margin-bottom: 3rem;
+            padding: 2.5rem;
+            background: #fafafa;
+            border-radius: 16px;
+            border-left: 5px solid #007aff;
+            transition: all 0.3s ease;
+        }
+
+        .work-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+        }
+
+        .work-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #1d1d1f;
+            margin-bottom: 0.5rem;
+        }
+
+        .work-publication {
+            font-size: 1.1rem;
+            color: #007aff;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .work-description {
+            color: #515154;
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+
+        .work-link {
+            display: inline-flex;
+            align-items: center;
+            background: #007aff;
+            color: white;
+            text-decoration: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            margin-right: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .work-link:hover {
+            background: #0056b3;
+            transform: translateY(-1px);
+        }
+
+        .work-link::after {
+            content: '→';
+            margin-left: 0.5rem;
+        }
+
+        .highlight {
+            background: linear-gradient(120deg, #a8edea 0%, #fed6e3 100%);
+            padding: 0.2rem 0.4rem;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+
+        .impact-tag {
+            display: inline-block;
+            background: #34c759;
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin-top: 1rem;
+            margin-right: 0.5rem;
+        }
+
+        .viral-tag { background: #ff3b30; }
+        .npr-tag { background: #af52de; }
+        .wsj-tag { background: #ff9500; }
+        .crisis-tag { background: #007aff; }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: #007aff;
+            text-decoration: none;
+            font-weight: 500;
+            margin-bottom: 2rem;
+            transition: color 0.3s ease;
+        }
+
+        .back-link:hover { color: #0056b3; }
+        .back-link::before { content: '←'; margin-right: 0.5rem; }
+
+        @media (max-width: 768px) {
+            .container { margin: 1rem; padding: 1.5rem; }
+            .name { font-size: 2.5rem; }
+            .work-item { padding: 1.5rem; }
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <h1>Marli Guzzetta</h1>
-    <p>Web Developer · Designer · Lifelong Learner</p>
-  </header>
-  <main>
-    <section class="intro">
-      <h2>About Me</h2>
-      <p>
-        Hi! I'm Marli Guzzetta, a passionate web developer with a knack for creating beautiful, user-friendly websites and applications. I love learning new technologies and taking on fresh challenges.
-      </p>
-    </section>
-    <section class="projects">
-      <h2>Projects</h2>
-      <div class="project">
-        <h3>Personal Portfolio</h3>
-        <p>A showcase of my work and projects. <br>
-        <a href="portfolio.html">View Portfolio</a></p>
-      </div>
-      <div class="project">
-        <h3>Resume Website</h3>
-        <p>My professional resume, built as a standalone HTML page.<br>
-        <a href="resume.html">View Resume</a></p>
-      </div>
-      <!-- Add more projects here -->
-    </section>
-    <section class="contact">
-      <h2>Contact</h2>
-      <ul>
-        <li>Email: <a href="mailto:your.email@example.com">your.email@example.com</a></li>
-        <li>GitHub: <a href="https://github.com/MarliGuzzetta" target="_blank">MarliGuzzetta</a></li>
-        <!-- Add LinkedIn or other links as desired -->
-      </ul>
-    </section>
-  </main>
+    <div class="container">
+        <a href="index.html" class="back-link">Back to Resume</a>
+        
+        <header class="header">
+            <h1 class="name">PORTFOLIO & WORK SAMPLES</h1>
+            <p class="subtitle">Strategic Content Leadership Across Media, Entertainment & Technology</p>
+            <p class="intro">
+                A curated selection of content strategy work spanning crisis communications, cultural storytelling, 
+                executive positioning, and multimedia campaign development—demonstrating ability to create culturally 
+                resonant content that drives engagement and business impact across global audiences.
+            </p>
+        </header>
+        
+        <div class="work-item">
+            <h2 class="work-title">"Came Here 'Cuz I Game Here" Employee Storytelling Series</h2>
+            <p class="work-publication">Activision Blizzard King Corporate Communications</p>
+            <p class="work-description">
+                Developed and produced employee storytelling initiative during period of organizational transition that shifted corporate narrative from external criticism to internal celebration. The series highlighted passionate employees who joined the company as fans of iconic franchises including <span class="highlight">Call of Duty, Overwatch, World of Warcraft, and Diablo</span>. This content strategy delivered <span class="highlight">first positive corporate press coverage in significant timeframe</span> and achieved viral engagement across European gaming markets, demonstrating global cultural resonance during challenging corporate moment.
+            </p>
+            <a href="https://www.activisionblizzard.com/newsroom/2022/07/came-here-cuz-i-game-here-activision-blizzard-king-faustine-chow" class="work-link" target="_blank">Read Full Story</a>
+            <div>
+                <span class="impact-tag viral-tag">Viral in Europe</span>
+                <span class="impact-tag crisis-tag">Crisis Communications</span>
+                <span class="impact-tag">Gaming Industry</span>
+            </div>
+        </div>
+        
+        <div class="work-item">
+            <h2 class="work-title">"On His Birthday 20 Years Ago, Tom Lo Escaped the South Tower"</h2>
+            <p class="work-publication">Inc. Magazine</p>
+            <p class="work-description">
+                Authored deeply personal profile of entrepreneur Thomas Lo and his journey out of the South Tower on 9/11, published on the 20th anniversary of the attacks. <span class="highlight">One of my most-read pieces in eight years at Inc.</span> The story exemplified cultural moment storytelling, blending personal narrative with entrepreneurial journey during significant national remembrance. Tom's story had never been told this way before, and the piece was subsequently <span class="highlight">picked up beat-for-beat by NBC's Today Show</span>, demonstrating the cultural resonance and national media impact of strategic narrative development.
+            </p>
+            <a href="https://www.inc.com/marli-guzzetta/tom-lo-september-11-world-trade-center-spy-c-chinese.html" class="work-link" target="_blank">Read Original Story</a>
+            <a href="https://www.today.com/video/how-one-man-pursues-his-two-passions-as-a-doctor-and-a-chef-201219141727" class="work-link" target="_blank">Watch Today Show Feature</a>
+            <div>
+                <span class="impact-tag">Cultural Storytelling</span>
+                <span class="impact-tag">Most-Read Feature</span>
+                <span class="impact-tag">Today Show Pickup</span>
+                <span class="impact-tag">National Media</span>
+            </div>
+        </div>
+        
+        <div class="work-item">
+            <h2 class="work-title">Cultural Music Journalism & Artist Development</h2>
+            <p class="work-publication">New Times Media Chain (National Alternative Weekly Network)</p>
+            <p class="work-description">
+                Identified and profiled breakthrough artists early in their careers across national alternative weekly network, demonstrating exceptional cultural trend identification and strategic storytelling in music. Featured coverage included <span class="highlight">Iron & Wine, Rilo Kiley, Death Cab for Cutie, and Metric</span> before their mainstream breakthrough, showcasing ability to spot emerging talent and cultural movements before they reach mass audiences. Work as Arts Editor at Yale Daily News expanded into independent music journalism covering the most innovative artists reshaping alternative and indie music landscapes throughout the early 2000s.
+            </p>
+            <div>
+                <span class="impact-tag">Music Industry</span>
+                <span class="impact-tag">Cultural Forecasting</span>
+                <span class="impact-tag">Artist Development</span>
+                <span class="impact-tag">Trend Identification</span>
+            </div>
+        </div>
+        
+        <div class="work-item">
+            <h2 class="work-title">"The Living Backstory" SiriusXM Radio Show</h2>
+            <p class="work-publication">Martha Stewart Living / SiriusXM</p>
+            <p class="work-description">
+                Co-produced and hosted live interview show on <span class="highlight">SiriusXM Radio</span>, developing cultural programming that told strategic stories behind magazine content. Pioneered early playlist programming for digital platforms, identifying emerging artists like <span class="highlight">Sharon van Etten before mainstream breakthrough</span>. Show demonstrated expertise in audio content creation, live interview hosting, and music curation while building bridge between print editorial content and broadcast programming. Experience provided deep understanding of audio storytelling techniques and music industry cultural movements.
+            </p>
+            <div>
+                <span class="impact-tag">SiriusXM Radio</span>
+                <span class="impact-tag">Live Audio Content</span>
+                <span class="impact-tag">Music Curation</span>
+                <span class="impact-tag">Artist Discovery</span>
+            </div>
+        </div>
+        
+        <div class="work-item">
+            <h2 class="work-title">"The Most Important IPOs Aren't Necessarily the Biggest"</h2>
+            <p class="work-publication">NPR All Things Considered</p>
+            <p class="work-description">
+                Original business analysis examining <span class="highlight">culturally significant IPOs throughout American history</span>, including Apple's 1980 offering that "seeded the Valley with baby-faced millionaires." Story demonstrated ability to identify cultural significance beyond financial metrics, analyzing how business events become cultural movements. NPR's flagship program selected the piece for national broadcast, including live on-air interview segment, showcasing expertise in translating complex business concepts for broad public radio audience.
+            </p>
+            <a href="https://www.npr.org/2015/07/11/422114667/the-most-important-ipos-aren-t-necessarily-the-biggest" class="work-link" target="_blank">Listen to NPR Segment</a>
+            <a href="https://www.inc.com/marli-guzzetta/ipos-changed-america.html" class="work-link" target="_blank">Read Original Article</a>
+            <div>
+                <span class="impact-tag npr-tag">NPR Featured</span>
+                <span class="impact-tag">Cultural Analysis</span>
+                <span class="impact-tag">Audio Content</span>
+            </div>
+        </div>
+        
+        <div class="work-item">
+            <h2 class="work-title">"Need to Relocate? Bring the House Too" (Mansion Section Cover)</h2>
+            <p class="work-publication">Wall Street Journal</p>
+            <p class="work-description">
+                Investigated and authored front-page feature for WSJ's luxury real estate section covering <span class="highlight">largest-ever house move in Nantucket history</span>. Drew on decade-long relationships with Nantucket community to identify compelling story of 10,000-square-foot house relocation. Coordinated photographer presence during actual moving day, resulting in dramatic visuals of massive house on wheels. Story demonstrated ability to identify unique luxury lifestyle content and maintain long-term source relationships that yield exclusive access to extraordinary events.
+            </p>
+            <a href="https://www.wsj.com/articles/need-to-relocate-bring-the-house-too-11564070995" class="work-link" target="_blank">Read WSJ Cover Story</a>
+            <div>
+                <span class="impact-tag wsj-tag">WSJ Cover</span>
+                <span class="impact-tag">Luxury Lifestyle</span>
+                <span class="impact-tag">Exclusive Access</span>
+            </div>
+        </div>
+        
+        <div class="work-item">
+            <h2 class="work-title">Founders Project Mentorship Series</h2>
+            <p class="work-publication">Inc. Magazine</p>
+            <p class="work-description">
+                Produced and reported on mentorship series pairing <span class="highlight">established entrepreneurs with rising founders</span> for Inc.'s 40th anniversary celebration. Documented conversations between mentors including Daymond John, Rebecca Minkoff, Daniel Lubetzki, and Tilman Fertitta with their mentees across offices, studios, restaurants, and virtual spaces nationwide. Series demonstrated cultural bridge-building between entrepreneurial generations and showcased authentic relationships between business leaders committed to fostering next generation of founders.
+            </p>
+            <a href="https://www.inc.com/magazine/202004/lindsay-blakely/koia-maya-french-daymond-john-protein-shake-founders-project-mentor.html" class="work-link" target="_blank">Read Featured Story</a>
+            <div>
+                <span class="impact-tag">Mentorship Platform</span>
+                <span class="impact-tag">Celebrity Entrepreneurs</span>
+                <span class="impact-tag">Multi-Platform Series</span>
+            </div>
+        </div>
+        
+        <div class="work-item">
+            <h2 class="work-title">Inc. 5000 Editorial Leadership</h2>
+            <p class="work-publication">Inc. Magazine</p>
+            <p class="work-description">
+                Oversaw editorial strategy for Inc.'s hallmark franchise celebrating <span class="highlight">America's fastest-growing private companies</span> from 2014-2021. Managed vetting process for Inc. 500 portion of list, advised Direct-to-Consumer department on applicant best practices, and directed editorial content and presentations across all platforms. Work provided deep insight into private company operations and entrepreneurial journeys, from "hero's journey, or scoundrel's journey, or a little bit of both—their story is the story of America's greatest advantage: the drive to create."
+            </p>
+            <a href="https://www.inc.com/inc5000" class="work-link" target="_blank">Explore Inc. 5000</a>
+            <div>
+                <span class="impact-tag">Data Strategy</span>
+                <span class="impact-tag">Franchise Leadership</span>
+                <span class="impact-tag">Private Companies</span>
+            </div>
+        </div>
+        
+        <div class="work-item">
+            <h2 class="work-title">Surge Cities: America's New Startup Hubs</h2>
+            <p class="work-publication">Inc. Magazine</p>
+            <p class="work-description">
+                Developed editorial franchise identifying <span class="highlight">50 American cities with fastest-growing startup populations</span> through partnership with Startup Genome research organization. Utilized thousands of data sets to surface non-obvious entrepreneurial ecosystems in cities like Bakersfield, California and Boise, Idaho. Package served as "playbook for other cities looking for new and creative ways to grow founder communities," demonstrating ability to translate complex data analysis into actionable cultural insights about emerging business trends.
+            </p>
+            <a href="https://www.inc.com/surge-cities" class="work-link" target="_blank">Read Surge Cities Analysis</a>
+            <div>
+                <span class="impact-tag">Data Analysis</span>
+                <span class="impact-tag">Emerging Markets</span>
+                <span class="impact-tag">Cultural Trends</span>
+            </div>
+        </div>
+        
+        <div class="work-item">
+            <h2 class="work-title">Inc.'s Best in Business Awards Program</h2>
+            <p class="work-publication">Inc. Magazine</p>
+            <p class="work-description">
+                Built and launched profitable new business line celebrating companies excelling across categories including <span class="highlight">workplace culture, customer service, social impact, and innovation</span>. Developed comprehensive awards platform from concept through execution, creating editorial framework, judging criteria, marketing strategy, and live event programming. Program generated significant new revenue stream while increasing audience engagement <span class="highlight">up to 300% across all platforms</span>. Initiative demonstrated ability to identify market opportunities, collaborate with cross-functional teams, and translate editorial expertise into successful business ventures that drive both cultural impact and financial results.
+            </p>
+            <div>
+                <span class="impact-tag">New Revenue Stream</span>
+                <span class="impact-tag">300% Engagement Increase</span>
+                <span class="impact-tag">Awards Platform</span>
+                <span class="impact-tag">Business Development</span>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
