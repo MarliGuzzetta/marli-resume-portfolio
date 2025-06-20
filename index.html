@@ -1,1 +1,202 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marli Guzzetta - Content Strategist</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #1d1d1f;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 3rem;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        
+        .name {
+            font-size: 3.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+        }
+        
+        .title {
+            font-size: 1.5rem;
+            color: #86868b;
+            margin-bottom: 2rem;
+            font-weight: 500;
+        }
+        
+        .intro {
+            font-size: 1.1rem;
+            color: #515154;
+            margin-bottom: 3rem;
+            line-height: 1.7;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .nav-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .nav-btn {
+            display: inline-flex;
+            align-items: center;
+            background: #007aff;
+            color: white;
+            text-decoration: none;
+            padding: 1rem 2rem;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 20px rgba(0,122,255,0.3);
+            min-width: 180px;
+            justify-content: center;
+        }
+        
+        .nav-btn:hover {
+            background: #0056b3;
+            transform: translateY(-2px);
+            box-shadow: 0 12px 30px rgba(0,122,255,0.4);
+        }
+        
+        .nav-btn::after {
+            content: '→';
+            margin-left: 0.5rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .nav-btn:hover::after {
+            transform: translateX(3px);
+        }
+        
+        .portfolio-btn {
+            background: #34c759;
+            box-shadow: 0 8px 20px rgba(52,199,89,0.3);
+        }
+        
+        .portfolio-btn:hover {
+            background: #28a745;
+            box-shadow: 0 12px 30px rgba(52,199,89,0.4);
+        }
+        
+        .contact {
+            margin-top: 2.5rem;
+            padding-top: 2rem;
+            border-top: 1px solid #f5f5f7;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        .contact-item {
+            color: #86868b;
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+        }
+        
+        .contact-item:hover {
+            color: #007aff;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                margin: 1rem;
+                padding: 2rem;
+            }
+            
+            .name {
+                font-size: 2.5rem;
+            }
+            
+            .nav-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .nav-btn {
+                width: 100%;
+                max-width: 280px;
+            }
+            
+            .contact {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+        
+        .highlight {
+            background: linear-gradient(120deg, #a8edea 0%, #fed6e3 100%);
+            padding: 0.2rem 0.4rem;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+        
+        /* Subtle animation */
+        .container {
+            animation: fadeInUp 0.8s ease-out;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="name">MARLI GUZZETTA</h1>
+        <p class="title">Content Strategist | Cultural Insights Leader | Media Executive</p>
+        <p class="intro">
+            Welcome to my professional portfolio. I'm a <span class="highlight">content strategist with 20+ years</span> leading creative teams across entertainment, media, and technology, with deep expertise in music journalism and cultural trend analysis.
+        </p>
+        
+        <div class="nav-buttons">
+            <a href="./resume.html" class="nav-btn">View Resume</a>
+            <a href="./portfolio.html" class="nav-btn portfolio-btn">Work Samples</a>
+        </div>
+        
+        <div class="contact">
+            <a href="mailto:marliguzzetta@gmail.com" class="contact-item">marliguzzetta@gmail.com</a>
+            <a href="https://linkedin.com/in/marli-guzzetta" class="contact-item" target="_blank">LinkedIn</a>
+            <span class="contact-item">Los Angeles, CA</span>
+        </div>
+    </div>
+</body>
+</html>
