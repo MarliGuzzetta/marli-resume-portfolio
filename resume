@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marli Guzzetta - Content Strategist</title>
+    <meta name="description" content="Marli Guzzetta – Los Angeles-based content strategist, cultural insights leader, and media executive specializing in editorial strategy, multimedia campaigns, and creative team leadership.">
+    <meta name="keywords" content="Content Strategy, Cultural Insights, Media Executive, Editorial Leadership, Podcast Production, Music Journalism, Creative Strategy, Los Angeles, Entertainment Industry, Trend Analysis, Digital Media, Multimedia Campaigns, Research, Brand Storytelling">
+    <style>
+        /* ...PASTE YOUR CSS FROM EARLIER HERE... */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        /* (All your CSS goes here—see previous messages for full CSS) */
+        /* ... */
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- ... REST OF YOUR RESUME HTML ... -->
+        <!-- For brevity, see previous messages for your full resume HTML content -->
+        <!-- Make sure your "View Portfolio" button links to portfolio.html -->
+        <a href="portfolio.html" class="portfolio-button">📁 View Portfolio</a>
+        <button class="print-button" onclick="window.print()">🖨️ Print Resume</button>
+    </div>
+    <script>
+        // Your JavaScript for animations and printing
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.job').forEach(job => {
+            job.style.opacity = '0';
+            job.style.transform = 'translateY(20px)';
+            job.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(job);
+        });
+    </script>
+</body>
+</html>
