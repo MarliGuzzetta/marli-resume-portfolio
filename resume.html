@@ -1,96 +1,636 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Marli Guzzetta | Portfolio</title>
-  <style>
-    body {
-      font-family: 'Segoe UI', Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #f7f8fa;
-      color: #222;
-    }
-    header {
-      background: #416dea;
-      color: #fff;
-      padding: 2rem 0 1rem 0;
-      text-align: center;
-    }
-    main {
-      max-width: 700px;
-      margin: 2rem auto;
-      background: #fff;
-      border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.07);
-      padding: 2rem;
-    }
-    h1, h2 {
-      margin-top: 0;
-    }
-    ul {
-      padding-left: 1.2em;
-    }
-    .projects {
-      margin: 2rem 0;
-    }
-    .project {
-      margin-bottom: 1.5rem;
-    }
-    .contact {
-      margin-top: 2rem;
-      padding-top: 1rem;
-      border-top: 1px solid #eee;
-    }
-    a {
-      color: #416dea;
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-    @media (max-width: 600px) {
-      main {
-        padding: 1rem;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marli Guzzetta - Content Strategist</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #1d1d1f;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+            background: white;
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        
+        .header {
+            text-align: center;
+            padding-bottom: 3rem;
+            border-bottom: 2px solid #f5f5f7;
+            margin-bottom: 3rem;
+        }
+        
+        .name {
+            font-size: 3.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+        }
+        
+        .title {
+            font-size: 1.5rem;
+            color: #86868b;
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+        }
+        
+        .contact {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-bottom: 1.5rem;
+        }
+        
+        .contact-item {
+            color: #515154;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .contact-item:hover {
+            color: #007aff;
+        }
+        
+        .summary {
+            font-size: 1.1rem;
+            color: #515154;
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .section {
+            margin-bottom: 3rem;
+        }
+        
+        .section-title {
+            font-size: 2rem;
+            font-weight: 600;
+            color: #1d1d1f;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 2px;
+        }
+        
+        .competencies {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .competency-group {
+            background: #f5f5f7;
+            padding: 1.5rem;
+            border-radius: 12px;
+            border-left: 4px solid #007aff;
+        }
+        
+        .competency-title {
+            font-weight: 600;
+            color: #1d1d1f;
+            margin-bottom: 0.5rem;
+        }
+        
+        .competency-list {
+            color: #515154;
+            font-size: 0.95rem;
+        }
+        
+        .job {
+            margin-bottom: 2.5rem;
+            padding: 2rem;
+            background: #fafafa;
+            border-radius: 12px;
+            border-left: 4px solid #34c759;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .job:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+        
+        .job-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #1d1d1f;
+        }
+        
+        .company {
+            font-size: 1.1rem;
+            color: #007aff;
+            font-weight: 500;
+        }
+        
+        .location-date {
+            color: #86868b;
+            font-size: 0.95rem;
+            text-align: right;
+        }
+        
+        .achievements {
+            list-style: none;
+            margin-top: 1rem;
+        }
+        
+        .achievements li {
+            margin-bottom: 0.8rem;
+            padding-left: 1.5rem;
+            position: relative;
+            color: #515154;
+            line-height: 1.6;
+        }
+        
+        .achievements li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: #007aff;
+            font-weight: bold;
+        }
+        
+        .sub-role {
+            font-weight: 600;
+            color: #1d1d1f;
+            margin-top: 1rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .education-item, .award-item {
+            background: #f5f5f7;
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin-bottom: 1rem;
+        }
+        
+        .degree {
+            font-weight: 600;
+            color: #1d1d1f;
+        }
+        
+        .school {
+            color: #515154;
+            margin-top: 0.3rem;
+        }
+        
+        .awards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+        
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+        
+        .skill-category {
+            background: #f5f5f7;
+            padding: 1.5rem;
+            border-radius: 12px;
+        }
+        
+        .skill-title {
+            font-weight: 600;
+            color: #1d1d1f;
+            margin-bottom: 0.5rem;
+        }
+        
+        .skill-content {
+            color: #515154;
+            font-size: 0.95rem;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                margin: 1rem;
+                padding: 1.5rem;
+            }
+            
+            .name {
+                font-size: 2.5rem;
+            }
+            
+            .contact {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .job-header {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+            
+            .location-date {
+                text-align: left;
+            }
+        }
+        
+        .highlight {
+            background: linear-gradient(120deg, #a8edea 0%, #fed6e3 100%);
+            padding: 0.2rem 0.4rem;
+            border-radius: 4px;
+            font-weight: 500;
+        }
+        
+        .portfolio-button {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: #007aff;
+            color: white;
+            border: none;
+            padding: 1rem 1.5rem;
+            border-radius: 50px;
+            font-size: 1rem;
+            cursor: pointer;
+            box-shadow: 0 10px 25px rgba(0,122,255,0.3);
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .portfolio-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 35px rgba(0,122,255,0.4);
+        }
+        
+        .print-button {
+            position: fixed;
+            bottom: 5rem;
+            right: 2rem;
+            background: #34c759;
+            color: white;
+            border: none;
+            padding: 1rem 1.5rem;
+            border-radius: 50px;
+            font-size: 1rem;
+            cursor: pointer;
+            box-shadow: 0 10px 25px rgba(52,199,89,0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .print-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 35px rgba(52,199,89,0.4);
+        }
+        
+        @media print {
+            body {
+                background: white;
+            }
+            
+            .container {
+                box-shadow: none;
+                margin: 0;
+                border-radius: 0;
+            }
+            
+            .print-button, .portfolio-button {
+                display: none;
+            }
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <h1>Marli Guzzetta</h1>
-    <p>Web Developer · Designer · Lifelong Learner</p>
-  </header>
-  <main>
-    <section class="intro">
-      <h2>About Me</h2>
-      <p>
-        Hi! I'm Marli Guzzetta, a passionate web developer with a knack for creating beautiful, user-friendly websites and applications. I love learning new technologies and taking on fresh challenges.
-      </p>
-    </section>
-    <section class="projects">
-      <h2>Projects</h2>
-      <div class="project">
-        <h3>Personal Portfolio</h3>
-        <p>A showcase of my work and projects. <br>
-        <a href="portfolio.html">View Portfolio</a></p>
-      </div>
-      <div class="project">
-        <h3>Resume Website</h3>
-        <p>My professional resume, built as a standalone HTML page.<br>
-        <a href="resume.html">View Resume</a></p>
-      </div>
-      <!-- Add more projects here -->
-    </section>
-    <section class="contact">
-      <h2>Contact</h2>
-      <ul>
-        <li>Email: <a href="mailto:your.email@example.com">your.email@example.com</a></li>
-        <li>GitHub: <a href="https://github.com/MarliGuzzetta" target="_blank">MarliGuzzetta</a></li>
-        <!-- Add LinkedIn or other links as desired -->
-      </ul>
-    </section>
-  </main>
+    <div class="container">
+        <header class="header">
+            <h1 class="name">MARLI GUZZETTA</h1>
+            <p class="title">Content Strategist | Cultural Insights Leader | Media Executive</p>
+            <div class="contact">
+                <a href="mailto:marliguzzetta@gmail.com" class="contact-item">marliguzzetta@gmail.com</a>
+                <span class="contact-item">(508) 942-0228</span>
+                <a href="https://linkedin.com/in/marli-guzzetta" class="contact-item" target="_blank">linkedin.com/in/marli-guzzetta</a>
+                <span class="contact-item">Los Angeles, CA</span>
+                <span class="contact-item">she/her</span>
+            </div>
+            <p class="summary">
+                Accomplished content strategist with 20+ years leading creative strategy teams across entertainment, media, and technology. Proven expertise in cultural listening, qualitative and quantitative research, and cross-functional collaboration with design and creative teams. Deep background in music journalism and podcast/audio production, with track record of identifying emerging cultural trends and translating insights into strategic frameworks.
+            </p>
+        </header>
+        
+        <section class="section">
+            <h2 class="section-title">Core Competencies</h2>
+            <div class="competencies">
+                <div class="competency-group">
+                    <div class="competency-title">Strategic Leadership</div>
+                    <div class="competency-list">Creative Strategy Development • Cross-functional Team Management • Cultural Trend Analysis • Research Design & Execution</div>
+                </div>
+                <div class="competency-group">
+                    <div class="competency-title">Content & Media</div>
+                    <div class="competency-list">Editorial Strategy • Podcast Production & Development • Music Industry Expertise • Multimedia Campaign Development</div>
+                </div>
+                <div class="competency-group">
+                    <div class="competency-title">Collaboration</div>
+                    <div class="competency-list">Design Team Partnership • Executive Communication • Stakeholder Management • Creative Direction Influence</div>
+                </div>
+                <div class="competency-group">
+                    <div class="competency-title">Research & Analysis</div>
+                    <div class="competency-list">Qualitative Research • Quantitative Analysis • User Data Interpretation • Cultural Listening & Assessment</div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="section">
+            <h2 class="section-title">Professional Experience</h2>
+            
+            <div class="job">
+                <div class="job-header">
+                    <div>
+                        <div class="job-title">Director of Content Strategy</div>
+                        <div class="company">Warner Bros. Discovery</div>
+                    </div>
+                    <div class="location-date">
+                        Los Angeles, CA<br>
+                        February 2025 - Present
+                    </div>
+                </div>
+                <ul class="achievements">
+                    <li>Led content strategy for <span class="highlight">35,000+ global employees</span>, launching company-wide newsletter in 2.5 months as founding department hire</li>
+                    <li>Developed multi-channel distribution strategy including email newsletters, digital platform integration, and <span class="highlight">QR code advertising on office video screens</span>, creating seamless user journey from awareness to engagement</li>
+                    <li>Achieved <span class="highlight">50-72% newsletter open rates</span> (exceeding industry benchmarks) with individual stories reaching <span class="highlight">2,300+ views</span> within first month</li>
+                    <li>Established editorial standards and strategic frameworks guiding design, photo, and creative teams across entertainment divisions</li>
+                </ul>
+            </div>
+            
+            <div class="job">
+                <div class="job-header">
+                    <div>
+                        <div class="job-title">Content Consultant & Media Producer</div>
+                        <div class="company">Independent</div>
+                    </div>
+                    <div class="location-date">
+                        Los Angeles, CA<br>
+                        April 2023 - February 2025
+                    </div>
+                </div>
+                <ul class="achievements">
+                    <li>Created multi-platform editorial projects for top-tier media and technology clients, ensuring 100% profitability with up to <span class="highlight">300% YOY engagement increases</span></li>
+                    <li>Managed global content production schedules and editorial calendars, streamlining workflows across distributed teams</li>
+                    <li>Provided strategic content expertise across video, audio, and written formats for consumer media, gaming, and executive platforms</li>
+                </ul>
+            </div>
+            
+            <div class="job">
+                <div class="job-header">
+                    <div>
+                        <div class="job-title">Director, Corporate Content</div>
+                        <div class="company">Activision Blizzard King</div>
+                    </div>
+                    <div class="location-date">
+                        Los Angeles, CA<br>
+                        March 2022 - April 2023
+                    </div>
+                </div>
+                <ul class="achievements">
+                    <li>Led creative strategy team delivering multi-channel campaigns during major corporate transition, generating <span class="highlight">95M+ positive global impressions</span></li>
+                    <li>Contributed to strategic narrative direction for Diablo IV launch and developed corporate content strategies supporting major product launches including <span class="highlight">Modern Warfare II, Overwatch 2, and World of Warcraft</span></li>
+                    <li>Collaborated with design and creative teams to develop content systems and campaign frameworks supporting top-performing game launches</li>
+                </ul>
+            </div>
+            
+            <div class="job">
+                <div class="job-header">
+                    <div>
+                        <div class="job-title">Director, Executive Content Strategy</div>
+                        <div class="company">G-P (Globalization Partners)</div>
+                    </div>
+                    <div class="location-date">
+                        Los Angeles, CA<br>
+                        September 2021 - March 2022
+                    </div>
+                </div>
+                <ul class="achievements">
+                    <li>Developed executive thought leadership and media strategies contributing to high-profile recognition (<span class="highlight">Fast Company World Changing Ideas</span>), industry invitations (World Economic Forum), and <span class="highlight">$4B valuation funding round</span></li>
+                    <li>Served as CEO's strategic communications lead for 1,200+ employees across 50 countries during hypergrowth phase</li>
+                    <li>Optimized content strategy for international audiences, achieving <span class="highlight">500% YoY growth</span> through culturally-informed approaches</li>
+                </ul>
+            </div>
+            
+            <div class="job">
+                <div class="job-header">
+                    <div>
+                        <div class="job-title">Executive Editor | Senior Editor | Research Director</div>
+                        <div class="company">Inc. Business Media</div>
+                    </div>
+                    <div class="location-date">
+                        New York, NY<br>
+                        January 2014 - September 2021
+                    </div>
+                </div>
+                
+                <div class="sub-role">Executive Editor (2020-2021):</div>
+                <ul class="achievements">
+                    <li>Managed editorial and creative strategy teams of <span class="highlight">25+ across print, digital, multimedia, and live events</span> platforms serving 40M+ monthly readers</li>
+                    <li>Built profitable new business lines including Inc.'s Best in Business awards program, increasing audience engagement up to <span class="highlight">300% across all platforms</span></li>
+                    <li>Collaborated with design teams and executive leadership to restructure remote operations during pandemic transition</li>
+                </ul>
+                
+                <div class="sub-role">Senior Editor (2019-2020):</div>
+                <ul class="achievements">
+                    <li>Directed editorial workflows for team of 10+, implementing strategic frameworks that boosted <span class="highlight">productivity 30% and reduced overhead 15%</span></li>
+                    <li>Architected data-driven content initiatives and research methodologies for audience insights and cultural trend analysis</li>
+                </ul>
+                
+                <div class="sub-role">Research Director (2014-2019):</div>
+                <ul class="achievements">
+                    <li>Built and managed fact-checking team and research protocols, establishing scalable frameworks for vetting private companies at enterprise scale</li>
+                    <li>Authored investigative business features with national recognition, including <span class="highlight">IPO cultural impact analysis selected for NPR's All Things Considered</span> with accompanying on-air interview</li>
+                    <li>Co-developed award-winning <span class="highlight">Inc. Uncensored podcast (2016-2017 Best of the Web Awards)</span>, contributing to ideation, strategic direction, and on-air appearances</li>
+                    <li>Reduced legal risks by <span class="highlight">270%</span> through rigorous research methodologies</li>
+                </ul>
+            </div>
+            
+            <div class="job">
+                <div class="job-header">
+                    <div>
+                        <div class="job-title">Cultural Music Writer & Critic</div>
+                        <div class="company">New Times Media Chain</div>
+                    </div>
+                    <div class="location-date">
+                        Multiple Markets<br>
+                        1998 - 2008
+                    </div>
+                </div>
+                <ul class="achievements">
+                    <li>Arts Editor at Yale Daily News, expanding to independent music journalism covering emerging artists across national alternative weekly network</li>
+                    <li>Identified and profiled breakthrough artists early in careers including <span class="highlight">Iron & Wine, Rilo Kiley, Death Cab for Cutie, and Metric</span>, demonstrating cultural trend identification and strategic storytelling</li>
+                </ul>
+            </div>
+            
+            <div class="job">
+                <div class="job-header">
+                    <div>
+                        <div class="job-title">Research Editor & Radio Host</div>
+                        <div class="company">Martha Stewart Living</div>
+                    </div>
+                    <div class="location-date">
+                        New York, NY<br>
+                        September 2011 - December 2013
+                    </div>
+                </div>
+                <ul class="achievements">
+                    <li>Enhanced fact-checking processes ensuring editorial accuracy across multimedia platforms while collaborating with design and production teams</li>
+                    <li>Co-produced and hosted <span class="highlight">"The Living Backstory" live interview show on SiriusXM Radio</span>, developing cultural programming that told strategic stories behind magazine content</li>
+                    <li>Pioneered early playlist programming for digital platforms, identifying emerging artists like <span class="highlight">Sharon van Etten</span> before mainstream breakthrough</li>
+                </ul>
+            </div>
+            
+            <div class="job">
+                <div class="job-header">
+                    <div>
+                        <div class="job-title">Reporter | Researcher (Concurrent Freelance)</div>
+                        <div class="company">Wall Street Journal & Vogue</div>
+                    </div>
+                    <div class="location-date">
+                        New York, NY<br>
+                        June 2013 - July 2019
+                    </div>
+                </div>
+                <ul class="achievements">
+                    <li>Conducted qualitative research and cultural analysis contributing to editorial integrity for major lifestyle and business features</li>
+                    <li>Authored <span class="highlight">most-viewed features in WSJ Off Duty and WSJ Mansion</span>, demonstrating ability to identify and develop culturally resonant content</li>
+                </ul>
+            </div>
+        </section>
+        
+        <section class="section">
+            <h2 class="section-title">Education</h2>
+            <div class="education-item">
+                <div class="degree">MFA, Creative Writing</div>
+                <div class="school">University of Florida, Gainesville, FL</div>
+            </div>
+            <div class="education-item">
+                <div class="degree">BA, English</div>
+                <div class="school">Yale University, New Haven, CT</div>
+            </div>
+            <div class="education-item">
+                <div class="degree">Certificate, Game Narrative</div>
+                <div class="school">Elvtr, EdX</div>
+            </div>
+        </section>
+        
+        <section class="section">
+            <h2 class="section-title">Awards & Recognition</h2>
+            <div class="awards-grid">
+                <div class="award-item">
+                    <div class="degree">5X MVP Award</div>
+                    <div class="school">Inc. and Fast Company (2019-2020)</div>
+                </div>
+                <div class="award-item">
+                    <div class="degree">ASME: General Excellence</div>
+                    <div class="school">Special Interest (2014), Lifestyle (2013)</div>
+                </div>
+                <div class="award-item">
+                    <div class="degree">Best of the Web Awards</div>
+                    <div class="school">Inc. Uncensored Podcast (2016, 2017)</div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="section">
+            <h2 class="section-title">Additional Qualifications</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <div class="skill-title">Audio & Video Production</div>
+                    <div class="skill-content">Expert in podcast development, SiriusXM radio hosting, video editing, and multimedia content creation</div>
+                </div>
+                <div class="skill-category">
+                    <div class="skill-title">Cultural Expertise</div>
+                    <div class="skill-content">Deep knowledge of music industry trends, emerging artist identification, and cultural movement analysis</div>
+                </div>
+                <div class="skill-category">
+                    <div class="skill-title">Technical Proficiency</div>
+                    <div class="skill-content">Adobe Creative Suite, Google Workspace, Slack, Airtable, Jira, Figma, WordPress, content management systems</div>
+                </div>
+                <div class="skill-category">
+                    <div class="skill-title">Languages</div>
+                    <div class="skill-content">Spanish and French (Basic Proficiency)</div>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <a href="./portfolio.html" class="portfolio-button">📁 View Portfolio</a>
+    <button class="print-button" onclick="window.print()">🖨️ Print Resume</button>
+    
+    <script>
+        // Add smooth scrolling for any internal links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Add subtle animations on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+        
+        // Observe all job items for animation
+        document.querySelectorAll('.job').forEach(job => {
+            job.style.opacity = '0';
+            job.style.transform = 'translateY(20px)';
+            job.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(job);
+        });
+    </script>
 </body>
 </html>
