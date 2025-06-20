@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Marli Guzzetta - Portfolio</title>
+    <title>Marli Guzzetta - Portfolio & Work Samples</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         body {
             font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
             line-height: 1.6;
@@ -18,7 +18,7 @@
             background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
             min-height: 100vh;
         }
-        
+
         .container {
             max-width: 1000px;
             margin: 0 auto;
@@ -29,16 +29,16 @@
             border-radius: 20px;
             box-shadow: 0 20px 40px rgba(0,0,0,0.1);
         }
-        
+
         .header {
             text-align: center;
             padding-bottom: 3rem;
             border-bottom: 2px solid #f5f5f7;
             margin-bottom: 3rem;
         }
-        
+
         .name {
-            font-size: 3.5rem;
+            font-size: 3rem;
             font-weight: 700;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             -webkit-background-clip: text;
@@ -46,152 +46,55 @@
             background-clip: text;
             margin-bottom: 0.5rem;
         }
-        
-        .title {
+
+        .subtitle {
             font-size: 1.5rem;
             color: #86868b;
-            margin-bottom: 1.5rem;
-            font-weight: 500;
+            margin-bottom: 1rem;
         }
-        
+
         .intro {
             font-size: 1.1rem;
             color: #515154;
-            text-align: center;
             max-width: 800px;
             margin: 0 auto;
-            line-height: 1.7;
         }
-        
-        .work-sample {
+
+        .work-item {
             margin-bottom: 3rem;
             padding: 2.5rem;
             background: #fafafa;
             border-radius: 16px;
-            border-left: 4px solid #007aff;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-left: 5px solid #007aff;
+            transition: all 0.3s ease;
         }
-        
-        .work-sample:hover {
+
+        .work-item:hover {
             transform: translateY(-3px);
-            box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
         }
-        
-        .sample-header {
-            margin-bottom: 1.5rem;
-            padding-bottom: 1rem;
-            border-bottom: 1px solid #e5e5ea;
-        }
-        
-        .sample-title {
-            font-size: 1.6rem;
+
+        .work-title {
+            font-size: 1.8rem;
             font-weight: 700;
             color: #1d1d1f;
             margin-bottom: 0.5rem;
         }
-        
-        .sample-meta {
-            display: flex;
-            gap: 2rem;
-            flex-wrap: wrap;
-            align-items: center;
-            margin-bottom: 1rem;
-        }
-        
-        .publication {
+
+        .work-publication {
             font-size: 1.1rem;
             color: #007aff;
             font-weight: 600;
+            margin-bottom: 1rem;
         }
-        
-        .date {
-            color: #86868b;
-            font-size: 0.95rem;
-        }
-        
-        .role {
-            background: #e3f2fd;
-            color: #1565c0;
-            padding: 0.3rem 0.8rem;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: 600;
-        }
-        
-        .sample-description {
+
+        .work-description {
             color: #515154;
             margin-bottom: 1.5rem;
-            font-size: 1rem;
             line-height: 1.7;
         }
-        
-        .key-insights {
-            background: #f0f9ff;
-            padding: 1.5rem;
-            border-radius: 12px;
-            border-left: 4px solid #0ea5e9;
-            margin-bottom: 1.5rem;
-        }
-        
-        .insights-title {
-            font-weight: 700;
-            color: #1d1d1f;
-            margin-bottom: 0.8rem;
-            font-size: 0.95rem;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-        
-        .insights-list {
-            list-style: none;
-        }
-        
-        .insights-list li {
-            margin-bottom: 0.5rem;
-            padding-left: 1.2rem;
-            position: relative;
-            color: #0369a1;
-            font-size: 0.95rem;
-            line-height: 1.5;
-        }
-        
-        .insights-list li::before {
-            content: '✓';
-            position: absolute;
-            left: 0;
-            color: #0ea5e9;
-            font-weight: bold;
-        }
-        
-        .impact-metrics {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1rem;
-            margin-bottom: 1.5rem;
-        }
-        
-        .metric {
-            background: #f0fdf4;
-            padding: 1rem;
-            border-radius: 8px;
-            text-align: center;
-            border: 1px solid #bbf7d0;
-        }
-        
-        .metric-value {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: #059669;
-            display: block;
-        }
-        
-        .metric-label {
-            font-size: 0.85rem;
-            color: #065f46;
-            margin-top: 0.3rem;
-        }
-        
-        .sample-link {
+
+        .work-link {
             display: inline-flex;
             align-items: center;
             background: #007aff;
@@ -199,509 +102,64 @@
             text-decoration: none;
             padding: 0.8rem 1.5rem;
             border-radius: 8px;
-            font-weight: 600;
-            font-size: 0.95rem;
+            font-weight: 500;
             transition: all 0.3s ease;
-            gap: 0.5rem;
+            margin-right: 1rem;
+            margin-bottom: 0.5rem;
         }
-        
-        .sample-link:hover {
+
+        .work-link:hover {
             background: #0056b3;
             transform: translateY(-1px);
         }
-        
-        .sample-link::after {
+
+        .work-link::after {
             content: '→';
-            transition: transform 0.3s ease;
+            margin-left: 0.5rem;
         }
-        
-        .sample-link:hover::after {
-            transform: translateX(3px);
-        }
-        
-        .back-link {
-            position: fixed;
-            bottom: 2rem;
-            right: 2rem;
-            background: #34c759;
-            color: white;
-            text-decoration: none;
-            padding: 1rem 1.5rem;
-            border-radius: 50px;
-            font-weight: 600;
-            font-size: 1rem;
-            box-shadow: 0 10px 25px rgba(52,199,89,0.3);
-            transition: all 0.3s ease;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        
-        .back-link:hover {
-            background: #28a745;
-            transform: translateY(-2px);
-            box-shadow: 0 15px 35px rgba(52,199,89,0.4);
-        }
-        
-        @media (max-width: 768px) {
-            .container {
-                margin: 1rem;
-                padding: 1.5rem;
-            }
-            
-            .name {
-                font-size: 2.5rem;
-            }
-            
-            .work-sample {
-                padding: 1.5rem;
-            }
-            
-            .sample-meta {
-                flex-direction: column;
-                gap: 0.8rem;
-                align-items: flex-start;
-            }
-            
-            .impact-metrics {
-                grid-template-columns: 1fr;
-            }
-        }
-        
+
         .highlight {
             background: linear-gradient(120deg, #a8edea 0%, #fed6e3 100%);
             padding: 0.2rem 0.4rem;
             border-radius: 4px;
             font-weight: 600;
         }
-        
-        @media print {
-            body {
-                background: white;
-            }
-            
-            .container {
-                box-shadow: none;
-                margin: 0;
-                border-radius: 0;
-            }
-            
-            .back-link {
-                display: none;
-            }
+
+        .impact-tag {
+            display: inline-block;
+            background: #34c759;
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin-top: 1rem;
+            margin-right: 0.5rem;
+        }
+
+        .viral-tag { background: #ff3b30; }
+        .npr-tag { background: #af52de; }
+        .wsj-tag { background: #ff9500; }
+        .crisis-tag { background: #007aff; }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: #007aff;
+            text-decoration: none;
+            font-weight: 500;
+            margin-bottom: 2rem;
+            transition: color 0.3s ease;
+        }
+
+        .back-link:hover { color: #0056b3; }
+        .back-link::before { content: '←'; margin-right: 0.5rem; }
+
+        @media (max-width: 768px) {
+            .container { margin: 1rem; padding: 1.5rem; }
+            .name { font-size: 2.5rem; }
+            .work-item { padding: 1.5rem; }
         }
     </style>
 </head>
-<body>
-    <div class="container">
-        <header class="header">
-            <h1 class="name">WORK SAMPLES</h1>
-            <p class="title">Strategic Content & Cultural Analysis Portfolio</p>
-            <p class="intro">Welcome to my work samples portfolio. Here you'll find examples of strategic content, cultural analysis, and editorial leadership from my career spanning music journalism, business media, and executive communications. From identifying breakthrough artists early in their careers to developing content strategies for global audiences, these samples demonstrate my ability to spot cultural trends and translate insights into compelling narratives.</p>
-        </header>
-        
-        <div class="work-sample">
-            <div class="sample-header">
-                <h2 class="sample-title">Cultural Music Journalism & Artist Development</h2>
-                <div class="sample-meta">
-                    <span class="publication">New Times Media Chain</span>
-                    <span class="date">1998-2008</span>
-                    <span class="role">Music Critic & Arts Editor</span>
-                </div>
-            </div>
-            <p class="sample-description">
-                Identified and profiled breakthrough artists early in their careers across national alternative weekly network, demonstrating exceptional cultural trend identification and strategic storytelling in music. Featured coverage included <span class="highlight">Iron & Wine, Rilo Kiley, Death Cab for Cutie, and Metric</span> before their mainstream breakthrough, showcasing ability to spot emerging talent and cultural movements before they reach mass audiences.
-            </p>
-            <div class="key-insights">
-                <div class="insights-title">Cultural Forecasting</div>
-                <ul class="insights-list">
-                    <li>Identified Iron & Wine's unique folk aesthetic before widespread indie recognition</li>
-                    <li>Analyzed Rilo Kiley's genre-blending approach as defining characteristic of emerging indie scene</li>
-                    <li>Predicted Death Cab for Cutie's crossover potential from indie to mainstream success</li>
-                    <li>Connected Metric's electronic-rock fusion to broader cultural movements in alternative music</li>
-                </ul>
-            </div>
-            <div class="impact-metrics">
-                <div class="metric">
-                    <span class="metric-value">4 major artists</span>
-                    <span class="metric-label">Early identification</span>
-                </div>
-                <div class="metric">
-                    <span class="metric-value">Cultural trendsetting</span>
-                    <span class="metric-label">Pre-mainstream coverage</span>
-                </div>
-            </div>
-        </div>
-
-        <div class="work-sample">
-            <div class="sample-header">
-                <h2 class="sample-title">Living Backstory Radio Programming</h2>
-                <div class="sample-meta">
-                    <span class="publication">Martha Stewart Living / SiriusXM</span>
-                    <span class="date">2011-2013</span>
-                    <span class="role">Co-Producer & Host</span>
-                </div>
-            </div>
-            <p class="sample-description">
-                Co-produced and hosted live interview programming on SiriusXM Radio, developing cultural content that revealed the stories behind magazine features. Created strategic narrative frameworks connecting lifestyle content to broader cultural movements.
-            </p>
-            <div class="key-insights">
-                <div class="insights-title">Program Development</div>
-                <ul class="insights-list">
-                    <li>Developed interview formats that revealed cultural context behind lifestyle content</li>
-                    <li>Identified emerging artists for early playlist programming</li>
-                    <li>Created strategic storytelling frameworks for live radio format</li>
-                    <li>Built audience engagement through cultural trend analysis</li>
-                </ul>
-            </div>
-            <div class="impact-metrics">
-                <div class="metric">
-                    <span class="metric-value">Live radio</span>
-                    <span class="metric-label">Format innovation</span>
-                </div>
-                <div class="metric">
-                    <span class="metric-value">Cultural programming</span>
-                    <span class="metric-label">Strategic development</span>
-                </div>
-            </div>
-        </div>
-
-        <div class="work-sample">
-            <div class="sample-header">
-                <h2 class="sample-title">Inc. 5000 Editorial Leadership & Research</h2>
-                <div class="sample-meta">
-                    <span class="publication">Inc. Magazine</span>
-                    <span class="date">2014-2021</span>
-                    <span class="role">Research Director & Editorial Leader</span>
-                </div>
-            </div>
-            <p class="sample-description">
-                Oversaw editorial strategy for Inc.'s hallmark franchise celebrating America's fastest-growing private companies. Built and managed comprehensive research protocols, establishing scalable frameworks for vetting thousands of companies while directing editorial content and presentations across all platforms. Led fact-checking team and developed risk assessment methodologies.
-            </p>
-            <div class="key-insights">
-                <div class="insights-title">Editorial & Research Innovation</div>
-                <ul class="insights-list">
-                    <li>Established scalable research protocols for high-volume company verification</li>
-                    <li>Directed editorial content strategy across print, digital, and event platforms</li>
-                    <li>Built comprehensive fact-checking team and training systems</li>
-                    <li>Developed quality control frameworks for enterprise-scale research and editorial production</li>
-                </ul>
-            </div>
-            <div class="impact-metrics">
-                <div class="metric">
-                    <span class="metric-value">270%</span>
-                    <span class="metric-label">Legal risk reduction</span>
-                </div>
-                <div class="metric">
-                    <span class="metric-value">5000+</span>
-                    <span class="metric-label">Companies vetted annually</span>
-                </div>
-            </div>
-        </div>
-
-        <div class="work-sample">
-            <div class="sample-header">
-                <h2 class="sample-title">Surge Cities Program Development</h2>
-                <div class="sample-meta">
-                    <span class="publication">Inc. Magazine / Startup Genome</span>
-                    <span class="date">2015-2017</span>
-                    <span class="role">Senior Researcher & Program Developer</span>
-                </div>
-            </div>
-            <p class="sample-description">
-                Collaborated with Startup Genome to build Inc. Magazine's Surge Cities program, identifying emerging business ecosystems and entrepreneurial trends across secondary markets. Led research methodology development and market analysis, connecting economic data to cultural and demographic shifts to create comprehensive rankings of America's fastest-growing startup ecosystems.
-            </p>
-            <div class="key-insights">
-                <div class="insights-title">Program Development & Market Analysis</div>
-                <ul class="insights-list">
-                    <li>Built comprehensive ranking methodology with Startup Genome for secondary market analysis</li>
-                    <li>Developed research frameworks connecting economic trends to cultural and demographic data</li>
-                    <li>Identified emerging business ecosystems before mainstream market recognition</li>
-                    <li>Created strategic partnerships for data-driven entrepreneurial ecosystem analysis</li>
-                </ul>
-            </div>
-            <div class="impact-metrics">
-                <div class="metric">
-                    <span class="metric-value">25+ cities</span>
-                    <span class="metric-label">Markets analyzed & ranked</span>
-                </div>
-                <div class="metric">
-                    <span class="metric-value">Program launch</span>
-                    <span class="metric-label">Inc./Startup Genome partnership</span>
-                </div>
-            </div>
-        </div>
-
-        <div class="work-sample">
-            <div class="sample-header">
-                <h2 class="sample-title">Founders Project Network & Editorial Program</h2>
-                <div class="sample-meta">
-                    <span class="publication">Inc. Magazine</span>
-                    <span class="date">2016-2018</span>
-                    <span class="role">Research Director & Program Developer</span>
-                </div>
-            </div>
-            <p class="sample-description">
-                Built comprehensive networking framework for high-growth entrepreneurs, then developed editorial coverage supporting the program. Created systematic approach to founder relationship development, establishing protocols for ongoing engagement and strategic content creation. Led investigative research component, developing background analysis methodologies and narrative frameworks for entrepreneurial success stories.
-            </p>
-            <div class="key-insights">
-                <div class="insights-title">Network Development & Editorial Strategy</div>
-                <ul class="insights-list">
-                    <li>Built comprehensive networking framework connecting high-growth entrepreneurs</li>
-                    <li>Developed editorial coverage strategy supporting ongoing founder relationship program</li>
-                    <li>Created systematic protocols for founder engagement and content development</li>
-                    <li>Established verification and background research methodologies for program integrity</li>
-                </ul>
-            </div>
-            <div class="impact-metrics">
-                <div class="metric">
-                    <span class="metric-value">Network framework</span>
-                    <span class="metric-label">Built founder connections</span>
-                </div>
-                <div class="metric">
-                    <span class="metric-value">Editorial program</span>
-                    <span class="metric-label">Supporting content strategy</span>
-                </div>
-            </div>
-        </div>
-
-        <div class="work-sample">
-            <div class="sample-header">
-                <h2 class="sample-title">Most Important IPOs Cultural Impact Analysis</h2>
-                <div class="sample-meta">
-                    <span class="publication">Inc. Magazine / NPR</span>
-                    <span class="date">2017</span>
-                    <span class="role">Senior Researcher</span>
-                </div>
-            </div>
-            <p class="sample-description">
-                Authored investigative business feature analyzing the cultural impact of major IPOs, selected for NPR's All Things Considered with accompanying on-air interview. Demonstrated ability to translate complex business trends into culturally relevant narratives.
-            </p>
-            <div class="key-insights">
-                <div class="insights-title">Cultural Analysis</div>
-                <ul class="insights-list">
-                    <li>Connected IPO trends to broader cultural and economic shifts</li>
-                    <li>Translated complex financial concepts into accessible narratives</li>
-                    <li>Identified cultural significance of major market events</li>
-                    <li>Developed frameworks for understanding business impact on society</li>
-                </ul>
-            </div>
-            <div class="impact-metrics">
-                <div class="metric">
-                    <span class="metric-value">NPR featured</span>
-                    <span class="metric-label">National recognition</span>
-                </div>
-                <div class="metric">
-                    <span class="metric-value">On-air interview</span>
-                    <span class="metric-label">Expert commentary</span>
-                </div>
-            </div>
-            <a href="#" class="sample-link">Listen to NPR Interview</a>
-        </div>
-
-        <div class="work-sample">
-            <div class="sample-header">
-                <h2 class="sample-title">"Need to Relocate? Bring the House Too" (Mansion Cover Story)</h2>
-                <div class="sample-meta">
-                    <span class="publication">Wall Street Journal</span>
-                    <span class="date">2019</span>
-                    <span class="role">Freelance Reporter</span>
-                </div>
-            </div>
-            <p class="sample-description">
-                Investigated and authored front-page feature for WSJ's luxury real estate section covering largest-ever house move in Nantucket history. Drew on decade-long relationships with Nantucket community to identify compelling story of 10,000-square-foot house relocation, coordinating photographer presence during actual moving day for dramatic visuals.
-            </p>
-            <div class="key-insights">
-                <div class="insights-title">Investigative Excellence</div>
-                <ul class="insights-list">
-                    <li>Identified unique luxury lifestyle story through long-term source relationships</li>
-                    <li>Coordinated exclusive access to extraordinary real estate event</li>
-                    <li>Connected local story to broader trends in luxury real estate and lifestyle changes</li>
-                    <li>Demonstrated ability to maintain decade-long source relationships for exclusive access</li>
-                </ul>
-            </div>
-            <div class="impact-metrics">
-                <div class="metric">
-                    <span class="metric-value">Mansion Cover</span>
-                    <span class="metric-label">WSJ front page feature</span>
-                </div>
-                <div class="metric">
-                    <span class="metric-value">Exclusive access</span>
-                    <span class="metric-label">Moving day coverage</span>
-                </div>
-            </div>
-            <a href="https://www.wsj.com/articles/need-to-relocate-bring-the-house-too-11564070995" class="sample-link">Read WSJ Cover Story</a>
-        </div>
-
-        <div class="work-sample">
-            <div class="sample-header">
-                <h2 class="sample-title">Best in Business Awards Program</h2>
-                <div class="sample-meta">
-                    <span class="publication">Inc. Magazine</span>
-                    <span class="date">2020-2021</span>
-                    <span class="role">Executive Editor</span>
-                </div>
-            </div>
-            <p class="sample-description">
-                Built profitable new business line for Inc. Magazine, developing comprehensive awards program strategy that increased audience engagement up to 300% across all platforms. Created editorial frameworks and strategic direction for multi-platform content initiative.
-            </p>
-            <div class="key-insights">
-                <div class="insights-title">Program Development</div>
-                <ul class="insights-list">
-                    <li>Developed comprehensive awards program strategy from concept to execution</li>
-                    <li>Created editorial frameworks for multi-platform content development</li>
-                    <li>Built strategic partnerships and content collaboration systems</li>
-                    <li>Established metrics and measurement systems for program success</li>
-                </ul>
-            </div>
-            <div class="impact-metrics">
-                <div class="metric">
-                    <span class="metric-value">300%</span>
-                    <span class="metric-label">Engagement increase</span>
-                </div>
-                <div class="metric">
-                    <span class="metric-value">Profitable</span>
-                    <span class="metric-label">New business line</span>
-                </div>
-            </div>
-            <a href="https://www.inc.com/best-in-business" class="sample-link">Explore Best in Business Awards</a>
-        </div>
-
-        <div class="work-sample">
-            <div class="sample-header">
-                <h2 class="sample-title">"On His Birthday 20 Years Ago, Tom Lo Escaped the South Tower"</h2>
-                <div class="sample-meta">
-                    <span class="publication">Inc. Magazine</span>
-                    <span class="date">2021</span>
-                    <span class="role">Executive Editor</span>
-                </div>
-            </div>
-            <p class="sample-description">
-                Authored deeply personal profile of entrepreneur Thomas Lo and his journey out of the South Tower on 9/11, published on the 20th anniversary of the attacks. <span class="highlight">One of my most-read pieces in eight years at Inc.</span> The story exemplified cultural moment storytelling, blending personal narrative with entrepreneurial journey during significant national remembrance. Tom's story had never been told this way before, and the piece was subsequently <span class="highlight">picked up beat-for-beat by NBC's Today Show</span>, demonstrating the cultural resonance and national media impact of strategic narrative development.
-            </p>
-            <div class="key-insights">
-                <div class="insights-title">Cultural Storytelling Excellence</div>
-                <ul class="insights-list">
-                    <li>Developed deeply personal narrative connecting 9/11 experience to entrepreneurial journey</li>
-                    <li>Created culturally significant content for major national anniversary moment</li>
-                    <li>Achieved national media recognition with Today Show pickup of original narrative</li>
-                    <li>Demonstrated ability to blend personal story with business content for maximum impact</li>
-                </ul>
-            </div>
-            <div class="impact-metrics">
-                <div class="metric">
-                    <span class="metric-value">Most-read</span>
-                    <span class="metric-label">8-year Inc. tenure</span>
-                </div>
-                <div class="metric">
-                    <span class="metric-value">Today Show pickup</span>
-                    <span class="metric-label">National TV coverage</span>
-                </div>
-            </div>
-            <a href="https://www.inc.com/marli-guzzetta/tom-lo-september-11-world-trade-center-spy-c-chinese.html" class="sample-link">Read Original Story</a>
-        </div>
-
-        <div class="work-sample">
-            <div class="sample-header">
-                <h2 class="sample-title">G-P Executive Content Strategy</h2>
-                <div class="sample-meta">
-                    <span class="publication">G-P (Globalization Partners)</span>
-                    <span class="date">2021-2022</span>
-                    <span class="role">Director, Executive Content Strategy</span>
-                </div>
-            </div>
-            <p class="sample-description">
-                Developed executive thought leadership and strategic communications for CEO of global remote workforce platform serving 1,200+ employees across 50 countries. Content strategy contributed to high-profile recognition and $4B valuation funding round.
-            </p>
-            <div class="key-insights">
-                <div class="insights-title">Executive Strategy</div>
-                <ul class="insights-list">
-                    <li>Developed thought leadership content for global remote workforce trends</li>
-                    <li>Created culturally-informed content for international audiences</li>
-                    <li>Built strategic narrative frameworks for executive communications</li>
-                    <li>Optimized content strategy for hypergrowth phase communications</li>
-                </ul>
-            </div>
-            <div class="impact-metrics">
-                <div class="metric">
-                    <span class="metric-value">$4B</span>
-                    <span class="metric-label">Valuation funding round</span>
-                </div>
-                <div class="metric">
-                    <span class="metric-value">500%</span>
-                    <span class="metric-label">YoY growth achieved</span>
-                </div>
-            </div>
-        </div>
-
-        <div class="work-sample">
-            <div class="sample-header">
-                <h2 class="sample-title">"Came Here 'Cuz I Game Here" Employee Storytelling Series</h2>
-                <div class="sample-meta">
-                    <span class="publication">Activision Blizzard King</span>
-                    <span class="date">2022-2023</span>
-                    <span class="role">Director, Corporate Content</span>
-                </div>
-            </div>
-            <p class="sample-description">
-                Developed and produced employee storytelling initiative during period of organizational transition that shifted corporate narrative from external criticism to internal celebration. The series highlighted passionate employees who joined the company as fans of iconic franchises including Call of Duty, Overwatch, World of Warcraft, and Diablo. This content strategy delivered first positive corporate press coverage in significant timeframe and achieved viral engagement across European gaming markets.
-            </p>
-            <div class="key-insights">
-                <div class="insights-title">Crisis Communications Strategy</div>
-                <ul class="insights-list">
-                    <li>Shifted corporate narrative from external criticism to positive employee storytelling</li>
-                    <li>Created content series celebrating company culture during challenging period</li>
-                    <li>Developed strategic frameworks for crisis communications through authentic storytelling</li>
-                    <li>Achieved global cultural resonance with content reaching viral status in European markets</li>
-                </ul>
-            </div>
-            <div class="impact-metrics">
-                <div class="metric">
-                    <span class="metric-value">Viral in Europe</span>
-                    <span class="metric-label">Global cultural impact</span>
-                </div>
-                <div class="metric">
-                    <span class="metric-value">First positive press</span>
-                    <span class="metric-label">Crisis communications success</span>
-                </div>
-            </div>
-            <a href="https://www.activisionblizzard.com/newsroom/2022/07/came-here-cuz-i-game-here-activision-blizzard-king-faustine-chow" class="sample-link">Read Employee Story</a>
-        </div>
-
-        <div class="work-sample">
-            <div class="sample-header">
-                <h2 class="sample-title">WBD Global Newsletter Strategic Content</h2>
-                <div class="sample-meta">
-                    <span class="publication">Warner Bros. Discovery</span>
-                    <span class="date">2025</span>
-                    <span class="role">Director of Content Strategy</span>
-                </div>
-            </div>
-            <p class="sample-description">
-                Led content strategy for 35,000+ global employees, launching company-wide newsletter in 2.5 months as founding department hire. Developed multi-channel distribution strategy with innovative QR code integration, achieving exceptional engagement rates that consistently exceeded industry benchmarks for internal communications.
-            </p>
-            <div class="key-insights">
-                <div class="insights-title">Strategic Innovation</div>
-                <ul class="insights-list">
-                    <li>Launched comprehensive newsletter program from concept to execution in 2.5 months</li>
-                    <li>Developed multi-channel distribution including innovative QR code video screen integration</li>
-                    <li>Created seamless user journey from awareness to deep content engagement</li>
-                    <li>Established editorial standards guiding design and creative teams across entertainment divisions</li>
-                </ul>
-            </div>
-            <div class="impact-metrics">
-                <div class="metric">
-                    <span class="metric-value">50-72%</span>
-                    <span class="metric-label">Newsletter open rates</span>
-                </div>
-                <div class="metric">
-                    <span class="metric-value">2,300+</span>
-                    <span class="metric-label">Views per story (first month)</span>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    <a href="./resume.html" class="back-link">← Back to Resume</a>
-</body>
 </html>
